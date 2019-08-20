@@ -1,16 +1,19 @@
 {
-  "name": "ls_cache",
-  "version": "1.0.0",
+  "name": "ls-cache-files",
+  "version": "0.1.1",
   "description": "use localstorage to cache assets files",
   "scripts": {
-    "build": "babel src -d lib",
+    "prod": "webpack --mode=production",
+    "dev": "webpack --mode=development",
+    "babel": "babel src -d lib --copy-files",
     "prepublish": "babel src -d lib --copy-files"
   },
   "main": "lib/index.js",
   "license": "ISC",
-  "homepage": "https://github.com/501981732/vue-x-ui",
+  "homepage": "https://github.com/501981732/ls-cache-files",
   "files": [
-    "lib"
+    "lib",
+    "README.md"
   ],
   "keywords": [
     "cache",
@@ -21,7 +24,11 @@
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/plugin-transform-runtime": "^7.5.5",
-    "@babel/preset-env": "^7.5.5"
+    "@babel/preset-env": "^7.5.5",
+    "@babel/runtime": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7"
   },
   "browserslist": [
     "> 1%",

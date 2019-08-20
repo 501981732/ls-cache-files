@@ -15,14 +15,16 @@
 // window.__LS__MAP = {
 //     'main': 'https://j1.58cdn.com.cn/git/hrg-innovate/pc-super-employer-home/static/js/main.chunk_v20190808162950.js',
 // }
+
+// useage 
+// import LSCacheFiles from './xx';
+// LSCacheFiles.init()
+
 // import 'whatwg-fetch'
 // import 'core-js/fn/promise';
-
-
 // import "@babel/polyfill";
-
-import "core-js/stable";
-import "regenerator-runtime/runtime";
+// import "core-js/stable";
+// import "regenerator-runtime/runtime";
 ;
 const PREFIX = '__LS__';
 const localStorage = window.localStorage;
@@ -140,32 +142,40 @@ function loadFile(url) {
     })
 }
 
-function LS_init() {
-    const {
-        values
-    } = Object
-    let __LS__MAP = window.__LS__MAP || {};
-    !!values(__LS__MAP) && values(__LS__MAP).forEach((path) => {
-        const prefixPath = PREFIX + path
-        if (localStorage) {
-            let LS_value = localStorage.getItem(prefixPath)
-            // 请求数据 + 插入数据 + 缓存数据
-            if (!LS_value) {
-                loadFile(path).then(res => {
-                    insertFileText(path, res)
-                    localStorage.setItem(prefixPath, res)
-                }).catch(err => {
-                    console.log(err)
-                    // throw new Error(err)
-                })
+function init() {
+
+}
+class LS_CACHE_FILES {
+    constructor() {
+
+    }
+    init() {
+        const {
+            values
+        } = Object
+        let __LS__MAP = window.__LS__MAP || {};
+        !!values(__LS__MAP) && values(__LS__MAP).forEach((path) => {
+            const prefixPath = PREFIX + path
+            if (localStorage) {
+                let LS_value = localStorage.getItem(prefixPath)
+                // 请求数据 + 插入数据 + 缓存数据
+                if (!LS_value) {
+                    loadFile(path).then(res => {
+                        insertFileText(path, res)
+                        localStorage.setItem(prefixPath, res)
+                    }).catch(err => {
+                        console.log(err)
+                        // throw new Error(err)
+                    })
+                } else {
+                    insertFileText(path, LS_value)
+                    return
+                }
             } else {
-                insertFileText(path, LS_value)
+                insertFile(path)
                 return
             }
-        } else {
-            insertFile(path)
-            return
-        }
-    })
+        })
+    }
 }
-export default LS_init
+export default new LS_CACHE_FILES()
