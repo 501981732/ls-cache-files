@@ -5,8 +5,9 @@ const config = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'lib'),
-    filename: 'bundle.js',
+    filename: 'index.min.js',
     library: 'LSCacheFiles',
+    sourceMapFilename: 'index.min.map',
     libraryTarget: 'umd'
   },
   module: {
@@ -17,7 +18,8 @@ const config = {
         exclude: /node_modules/
       }
     ]
-  }
+  },
+  devtool: 'source-map'
 }
 
 module.exports = config;

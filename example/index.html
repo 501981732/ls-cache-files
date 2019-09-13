@@ -5,7 +5,30 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <script src="./../index.js"></script>
+    <script>
+        //   window.__LS__MAP = {
+        //    'js/react/react.js': 'https://cdn.bootcss.com/react/16.8.6/umd/react.production.min.js',
+        //    'js/react/react-dom.js': 'https://cdn.bootcss.com/react-dom/16.8.6/umd/react-dom.production.min.js',
+        //    'js/react/react-router-dom.js': 'https://cdn.bootcss.com/react-router-dom/5.0.1/react-router-dom.min.js',
+        //  }
+          window.__LS__MAP = {
+            version: 1,
+            list: [{
+                version: 1,
+                url: 'http://img.58cdn.com.cn/git/hrg-innovate/m-super-employer/static/css/main.chunk_v20190830183911.css',//资源地址
+                //type?: 'js'
+            },{
+                version: 1,
+                url: 'http://j1.58cdn.com.cn/global_app/js/lib/zepto.min.js',//资源地址
+                //type?: 'js'
+            }]
+          }
+    </script>
+
+    <script src="./../lib/bundle.js"></script>
+    <script>
+        console.log(LSCacheFiles.init)
+        // LSCacheFiles.init()
+    </script>
 </body>
 </html>

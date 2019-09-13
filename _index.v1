@@ -1,0 +1,50 @@
+// window.__LS__MAP = {
+//     version: 1,
+//     list: [{
+//         version: 1,
+//         url: 'https://j1.58cdn.com.cn/git/hrg-innovate/pc-super-employer-home/static/js/main.chunk_v20190808162950.js',
+//         type: 'js'
+//     }, {
+//         version: 1,
+//         url: 'https://j1.58cdn.com.cn/git/hrg-innovate/pc-super-employer-home/static/js/main.chunk_v20190808162950.js',
+//         type: 'js'
+//     }]
+// }
+
+// useage 
+;
+// const PREFIX = '__LS__';
+// class LS_CACHE_FILES {
+//     constructor() {
+
+//     }
+//     init() {
+//         const {
+//             values
+//         } = Object
+//         let __LS__MAP = window.__LS__MAP || {};
+//         !!values(__LS__MAP) && values(__LS__MAP).forEach((path) => {
+//             const prefixPath = PREFIX + path
+//             if (localStorage) {
+//                 let LS_value = localStorage.getItem(prefixPath)
+//                 // 请求数据 + 插入数据 + 缓存数据
+//                 if (!LS_value) {
+//                     loadFile(path).then(res => {
+//                         insertFileText(path, res)
+//                         localStorage.setItem(prefixPath, res)
+//                     }).catch(err => {
+//                         console.log(err)
+//                         // throw new Error(err)
+//                     })
+//                 } else {
+//                     insertFileText(path, LS_value)
+//                     return
+//                 }
+//             } else {
+//                 insertFile(path)
+//                 return
+//             }
+//         })
+//     }
+// }
+// export default new LS_CACHE_FILES()

@@ -1,18 +1,20 @@
 {
   "name": "ls-cache-files",
-  "version": "0.1.1",
+  "version": "0.2.4",
   "description": "use localstorage to cache assets files",
   "scripts": {
     "prod": "webpack --mode=production",
     "dev": "webpack --mode=development",
     "babel": "babel src -d lib --copy-files",
-    "prepublish": "babel src -d lib --copy-files"
+    "prepublish": "babel src -d lib --copy-files & webpack --mode=production"
   },
   "main": "lib/index.js",
+  "typings": "./index.d.ts",
   "license": "ISC",
   "homepage": "https://github.com/501981732/ls-cache-files",
   "files": [
     "lib",
+    "example",
     "README.md"
   ],
   "keywords": [
